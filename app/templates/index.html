@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudCart - AWS DevOps E-Commerce</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+        <h1>☁️ CloudCart</h1>
+        <span>AWS DevOps E-Commerce Platform</span>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h2>Welcome to CloudCart</h2>
+        <p>A cloud-ready e-commerce application built with Python, Flask and DevOps practices.</p>
+    </section>
+
+    <section>
+        <h2>Products</h2>
+
+        <div class="products">
+
+            {% for product in products %}
+
+            <div class="card">
+                <div class="product-icon">📦</div>
+
+                <h3>{{ product.name }}</h3>
+
+                <p>{{ product.description }}</p>
+
+                <h3>₹{{ "{:,}".format(product.price) }}</h3>
+
+                <button>Add to Cart</button>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>CloudCart © 2026 | AWS DevOps Project</p>
+</footer>
+
+</body>
+</html>
