@@ -14,15 +14,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-  - name: Checkout code
-    uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-  - name: Debug OIDC
-    uses: github/actions-oidc-debugger@main
+      - name: Debug OIDC
+        uses: github/actions-oidc-debugger@main
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
-
         with:
           role-to-assume: arn:aws:iam::729005487887:role/CloudCart-GitHub-Actions-Role
           aws-region: ap-south-1
